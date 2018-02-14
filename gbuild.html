@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        /*.panel-body {
+            background-size: 200% 200%;
+            background-image: linear-gradient(to top, #A72424 50%, transparent 50%);
+            -webkit-transition: background-position 12s, color 12s ease, border-color 12s ease;
+            -moz-transition: background-position 12s, color 12s ease, border-color 12s ease;
+            -ms-transition: background-position 12s, color 12s ease, border-color 12s ease;
+            -o-transition: background-position 12s, color 12s ease, border-color 12s ease;
+            transition: background-position 12s, color 12s ease, border-color 12s ease;
+        }
+        
+        .panel-body:hover {
+            background-image: linear-gradient(to top, #A72424 51%, transparent 50%);
+            background-position: 0 100%;
+            -webkit-transition: background-position 12s, color 12s ease, border-color 12s ease;
+            -moz-transition: background-position 12s, color 12s ease, border-color 12s ease;
+            -ms-transition: background-position 300ms, color 12s ease, border-color 12s ease;
+            -o-transition: background-position 12s, color 12s ease, border-color 12s ease;
+            transition: background-position 12s, color 12s ease, border-color 12s ease;
+        }*/
+        
+        .animate-me:hover {
+            background-color: red;
+            width: 50px;
+            height: 50px;
+            transition: bottom 150s, background-color 150s;
+        }
+        
+        .panel-body {
+            height: 0px;
+            background-color: #a1eda1;
+            padding: 0px;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            //$(".panel-body").mouseover();
+            //$('.panel-body').mouseenter().mouseleave();
+
+            $("#box").animate({
+                height: "150px"
+
+            }, 12300, function() {
+
+                // Animation complete.
+
+            });
+
+
+            $("#box").animate({
+                opacity: '0.5',
+                //color: red,
+                height: '0px',
+            }, 12300, function() {
+
+                // Animation complete.
+                $("#box").addClass('Test');
+
+            });
+
+
+            //$(".panel-body").addClass('hover');
+        });
+    </script>
+
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            Panel title
+                        </h3>
+                    </div>
+                    <div id="box" class="panel-body">
+                        <div>Time/Temp</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            Garage Status
+                        </h3>
+                    </div>
+                    <div class="panel-body animate-me">
+                        Panel content
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
